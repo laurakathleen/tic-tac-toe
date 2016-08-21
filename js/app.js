@@ -20,24 +20,22 @@ $(document).ready(function() {
 		return clickCounter;
 	})
 //at 0 turns, say 'player 1, go':
-	function switchTurn(){
+	$(box).on('click', function switchTurn(){
 		if (clickCounter % 2 != 0) {
-			player2;
+			player2 = true;
 			$(twoTurn).css('visibility', 'visible');
 			$(oneTurn).css('visibility', 'hidden');
-		} else if (clickCounter % 2 == 0) {
+			$(this).append('<p>X</p>');
+			$(this).addClass('.claimed-box');
+		} else if (clickCounter == 0 || clickCounter % 2 == 0) {
 			player1=true;
 			$(oneTurn).css('visibility', 'visible');
 			$(twoTurn).css('visibility', 'hidden');	
+			$(this).append('<p>O</p>');
+			$(this).addClass('.claimed-box');
 		}
-	}
-//Add the 'x' for player 1's turn
-	$(box).on('click', function xTurn(){
-		$(this).append('<p>X</p>');
-		$(this).addClass('.claimed-box');
-		switchTurn();
 	})
-//Reset button
+//Reset button & reset clickCounter to 0 so player1's turn
   		$(resetBtn).on('click', function emptyGrid(){
   			$(box).empty();
   			clickCounter = 0;

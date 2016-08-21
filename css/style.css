@@ -1,7 +1,10 @@
-.players {
+.header-section p {
 	display: inline-block;
 	margin: 30px;
 	visibility: hidden;
+}
+
+.claimed-box {
 }
 
 #board {

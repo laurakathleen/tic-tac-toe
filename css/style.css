@@ -1,3 +1,9 @@
+.players {
+	display: inline-block;
+	margin: 30px;
+	visibility: hidden;
+}
+
 #board {
   margin-top: 10px;
 }
@@ -14,3 +20,5 @@
 p {
 	text-align: center;
 }
+
+

@@ -41,5 +41,7 @@ $(document).ready(function() {
   		$(resetBtn).on('click', function emptyGrid(){
   			$(box).empty();
   			clickCounter = 0;
+  			$(oneTurn).css('visibility', 'visible');
+			$(twoTurn).css('visibility', 'hidden');
   		})
  })

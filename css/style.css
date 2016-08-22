@@ -4,7 +4,10 @@
 	visibility: hidden;
 }
 
-.claimed-box {
+.claimed-box-x {
+}
+
+.claimed-box-o {
 }
 
 #board {
@@ -23,5 +26,4 @@
 p {
 	text-align: center;
 }
-
 

@@ -1,7 +1,7 @@
 // wait for the DOM to finish loading
 var box = $('.box');
-var x = $('x');
-var o =  $('o');
+var x = $('X');
+var o =  $('O');
 var resetBtn = $('.reset-btn');
 var row = $('.row');
 var clickCounter = 0;
@@ -34,9 +34,10 @@ $(document).ready(function() {
 			} else {
 //Marks box with an X:				
 				$(this).append('<p>X</p>');
-				$(this).addClass('.claimed-box');
+				$(this).addClass('.claimed-box-x');
 				xCounter += 1;
 				console.log("x= " + xCounter);
+				winnerCheck(x, player1);
 				tieChecker();
 			}
 //switch to player 2 turn:	
@@ -50,13 +51,38 @@ $(document).ready(function() {
 			} else {
 //Marks box with an O:		
 				$(this).append('<p>O</p>');
-				$(this).addClass('.claimed-box');
+				$(this).addClass('.claimed-box-o');
 				oCounter += 1;
 				console.log("o= " + oCounter);
+				winnerCheck(o, player2);
 				tieChecker();
 			}
 		}
 	})
+
+	/*function winnerCheck() {	
+		if ($('#box1').val() === $('#box2').val() && $('#box2').val() === $('#box3').val() || $('#box4').val() === $('#box5').val() && $('#box5').val() === $('#box6').val() || $('#box7').val() === $('#box8').val() && $('#box8').val() === $('#box9').val()){
+			if ($('#box1').val() == 'X'){
+				console.log("Player 1 wins X's!");
+			} else if ($('#box1').val() == 'O'){
+				console.log("Player 2 wins O's!");
+			}
+		}
+	}
+	*/
+	function winnerCheck(n, player) {
+		if ($('#box1').hasClass('.claimed-box-n') && $('#box2').hasClass('.claimed-box-n') && $('#box3').hasClass('.claimed-box-n') ||
+		$('#box4').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box6').hasClass('.claimed-box-n') ||
+		$('#box7').hasClass('.claimed-box-n') && $('#box8').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
+		$('#box1').hasClass('.claimed-box-n') && $('#box4').hasClass('.claimed-box-n') && $('#box7').hasClass('.claimed-box-n') ||
+		$('#box2').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box8').hasClass('.claimed-box-n') ||
+		$('#box3').hasClass('.claimed-box-n') && $('#box6').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
+		$('#box1').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
+		$('#box3').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box7').hasClass('.claimed-box-n')){
+			console.log("Winner!");
+		$(row).append("<h1>player + ' wins!'</h1>");
+		}
+	}
 
 //Check for a tie:
 	function tieChecker() {

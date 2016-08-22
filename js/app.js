@@ -25,14 +25,22 @@ $(document).ready(function() {
 			player2 = true;
 			$(twoTurn).css('visibility', 'visible');
 			$(oneTurn).css('visibility', 'hidden');
-			$(this).append('<p>X</p>');
-			$(this).addClass('.claimed-box');
+			if ($(this).hasClass('.claimed-box')){
+				alert("Pick a different box.");
+			} else {
+				$(this).append('<p>X</p>');
+				$(this).addClass('.claimed-box');
+			}	
 		} else if (clickCounter == 0 || clickCounter % 2 == 0) {
 			player1=true;
 			$(oneTurn).css('visibility', 'visible');
-			$(twoTurn).css('visibility', 'hidden');	
-			$(this).append('<p>O</p>');
-			$(this).addClass('.claimed-box');
+			$(twoTurn).css('visibility', 'hidden');
+			if ($(this).hasClass('.claimed-box')){
+				alert("Pick a different box.");
+			} else {	
+				$(this).append('<p>O</p>');
+				$(this).addClass('.claimed-box');
+			}
 		}
 	})
 //Reset button & reset clickCounter to 0 so player1's turn
@@ -41,5 +49,6 @@ $(document).ready(function() {
   			clickCounter = 0;
   			$(oneTurn).css('visibility', 'visible');
 			$(twoTurn).css('visibility', 'hidden');
+			$(box).removeClass('.claimed-box');
   		})
  })

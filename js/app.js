@@ -71,16 +71,24 @@ $(document).ready(function() {
 	}
 	*/
 	function winnerCheck(n, player) {
-		if ($('#box1').hasClass('.claimed-box-n') && $('#box2').hasClass('.claimed-box-n') && $('#box3').hasClass('.claimed-box-n') ||
-		$('#box4').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box6').hasClass('.claimed-box-n') ||
-		$('#box7').hasClass('.claimed-box-n') && $('#box8').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
-		$('#box1').hasClass('.claimed-box-n') && $('#box4').hasClass('.claimed-box-n') && $('#box7').hasClass('.claimed-box-n') ||
-		$('#box2').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box8').hasClass('.claimed-box-n') ||
-		$('#box3').hasClass('.claimed-box-n') && $('#box6').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
-		$('#box1').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box9').hasClass('.claimed-box-n') ||
-		$('#box3').hasClass('.claimed-box-n') && $('#box5').hasClass('.claimed-box-n') && $('#box7').hasClass('.claimed-box-n')){
+		if ($('#box1').hasClass('.claimed-box-x') && $('#box2').hasClass('.claimed-box-x') && $('#box3').hasClass('.claimed-box-x') ||
+		$('#box1').hasClass('.claimed-box-o') && $('#box2').hasClass('.claimed-box-o') && $('#box3').hasClass('.claimed-box-o') ||
+		$('#box4').hasClass('.claimed-box-x') && $('#box5').hasClass('.claimed-box-x') && $('#box6').hasClass('.claimed-box-x') ||
+		$('#box4').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box6').hasClass('.claimed-box-o') ||
+		$('#box7').hasClass('.claimed-box-x') && $('#box8').hasClass('.claimed-box-x') && $('#box9').hasClass('.claimed-box-x') ||
+		$('#box7').hasClass('.claimed-box-o') && $('#box8').hasClass('.claimed-box-o') && $('#box9').hasClass('.claimed-box-o') ||
+		$('#box1').hasClass('.claimed-box-x') && $('#box4').hasClass('.claimed-box-x') && $('#box7').hasClass('.claimed-box-x') ||
+		$('#box1').hasClass('.claimed-box-o') && $('#box4').hasClass('.claimed-box-o') && $('#box7').hasClass('.claimed-box-o') ||
+		$('#box2').hasClass('.claimed-box-x') && $('#box5').hasClass('.claimed-box-x') && $('#box8').hasClass('.claimed-box-x') ||
+		$('#box2').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box8').hasClass('.claimed-box-o') ||
+		$('#box3').hasClass('.claimed-box-x') && $('#box6').hasClass('.claimed-box-x') && $('#box9').hasClass('.claimed-box-x') ||
+		$('#box3').hasClass('.claimed-box-o') && $('#box6').hasClass('.claimed-box-o') && $('#box9').hasClass('.claimed-box-o') ||
+		$('#box1').hasClass('.claimed-box-x') && $('#box5').hasClass('.claimed-box-x') && $('#box9').hasClass('.claimed-box-x') ||
+		$('#box1').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box9').hasClass('.claimed-box-o') ||
+		$('#box3').hasClass('.claimed-box-x') && $('#box5').hasClass('.claimed-box-x') && $('#box7').hasClass('.claimed-box-x') ||
+		$('#box3').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box7').hasClass('.claimed-box-o')){
 			console.log("Winner!");
-		$(row).append("<h1>player + ' wins!'</h1>");
+			$('.reset-btn').append("<h1>player + ' wins!'</h1>");
 		}
 	}
 

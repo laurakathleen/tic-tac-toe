@@ -5,6 +5,8 @@ var o =  $('o');
 var resetBtn = $('.reset-btn');
 var row = $('.row');
 var clickCounter = 0;
+var xCounter = 0;
+var oCounter = 0;
 var oneTurn = $('#player1-turn');
 var twoTurn = $('#player2-turn');
 var player1;
@@ -33,6 +35,9 @@ $(document).ready(function() {
 //Marks box with an X:				
 				$(this).append('<p>X</p>');
 				$(this).addClass('.claimed-box');
+				xCounter += 1;
+				console.log("x= " + xCounter);
+				tieChecker();
 			}
 //switch to player 2 turn:	
 		} else if (clickCounter == 0 || clickCounter % 2 == 0) {
@@ -46,9 +51,21 @@ $(document).ready(function() {
 //Marks box with an O:		
 				$(this).append('<p>O</p>');
 				$(this).addClass('.claimed-box');
+				oCounter += 1;
+				console.log("o= " + oCounter);
+				tieChecker();
 			}
 		}
 	})
+
+//Check for a tie:
+	function tieChecker() {
+		if (xCounter == 5 && oCounter ==4){
+			alert("It's a tie! Play again.");
+			emptyGrid();
+		}
+	}
+
 //Reset button & reset clickCounter to 0 so player1's turn
   		$(resetBtn).on('click', function emptyGrid(){
   			$(box).empty();

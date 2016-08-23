@@ -88,7 +88,11 @@ $(document).ready(function() {
 		$('#box3').hasClass('.claimed-box-x') && $('#box5').hasClass('.claimed-box-x') && $('#box7').hasClass('.claimed-box-x') ||
 		$('#box3').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box7').hasClass('.claimed-box-o')){
 			console.log("Winner!");
-			$('.reset-btn').append("<h1>player + ' wins!'</h1>");
+			if (clickCounter == 0 || clickCounter % 2 == 0){
+			$('.reset-btn').append("<h1>player 2 wins!'</h1>");
+			} else {
+			$('.reset-btn').append("<h1>player 1 wins!'</h1>");
+			}
 		}
 	}
 

@@ -33,7 +33,7 @@ $(document).ready(function() {
 				alert("Pick a different box.");
 			} else {
 //Marks box with an X:				
-				$(this).append('<p>X</p>');
+				$(this).append('<p id="xMark">X</p>');
 				$(this).addClass('.claimed-box-x');
 				xCounter += 1;
 				console.log("x= " + xCounter);
@@ -50,7 +50,7 @@ $(document).ready(function() {
 				alert("Pick a different box.");
 			} else {
 //Marks box with an O:		
-				$(this).append('<p>O</p>');
+				$(this).append('<p id="oMark">O</p>');
 				$(this).addClass('.claimed-box-o');
 				oCounter += 1;
 				console.log("o= " + oCounter);
@@ -89,9 +89,9 @@ $(document).ready(function() {
 		$('#box3').hasClass('.claimed-box-o') && $('#box5').hasClass('.claimed-box-o') && $('#box7').hasClass('.claimed-box-o')){
 			console.log("Winner!");
 			if (clickCounter == 0 || clickCounter % 2 == 0){
-			$('.reset-btn').append("<h1>player 2 wins!'</h1>");
+			$('#line').append("<h1 class='winner'>player 2 wins!</h1>");
 			} else {
-			$('.reset-btn').append("<h1>player 1 wins!'</h1>");
+			$('#line').append("<h1 class='winner'>player 1 wins!</h1>");
 			}
 		}
 	}
@@ -111,5 +111,6 @@ $(document).ready(function() {
   			$(oneTurn).css('visibility', 'visible');
 			$(twoTurn).css('visibility', 'hidden');
 			$(box).removeClass('.claimed-box');
+			$('.winner').css('visibility', 'hidden');
   		})
  })

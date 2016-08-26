@@ -1,13 +1,57 @@
+/******************
+Colors:
+dark red: #3D1308;
+lighter red: #772014;
+Whitish: #E8F7EE;
+Dark Liver: #524632;
+Light Green: #9BC995;
+*******************/
+body {
+	background-color: #3D1308;
+}
+
+#main-heading {
+	color: #9BC995;
+	font-size: 150px;
+}
+
+.player-turn {
+	background-color: #E8F7EE;
+	width: 100%;
+}
+
+#player1-turn{
+	color: #524632;
+}
+
+#player2-turn {
+	color:#524632;
+}
+
+
 .header-section p {
 	display: inline-block;
 	margin: 30px;
 	visibility: hidden;
+	color: #9BC995;
+	font-size: 60px;
 }
 
 .claimed-box-x {
 }
 
+#xMark {
+	font-size: 90px;
+	color: #E8F7EE;
+}
+
+#oMark {
+	font-size: 90px;
+	color: #E8F7EE;
+}
+
 .claimed-box-o {
+
 }
 
 #board {
@@ -15,15 +59,31 @@
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid #E8F7EE;
   height: 150px;
 }
 
 .reset-btn{
-
+	margin-top: 2em;
+	margin-left: 30%;
+	width: 40%;
+	height: 15%;
+	background-color: #E8F7EE;;
+	border: 1px solid #3D1308;
+	font-size: 25px;
+	border-radius: 5%;
 }
 
 p {
 	text-align: center;
 }
 
+.winner {
+	font-size: 300px;
+	color: #772014;
+	position: absolute;
+	top: 0;
+	margin-top: 25%;
+	-webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: #E8F7EE; 
+}

@@ -98,7 +98,7 @@ $(document).ready(function() {
 
 //Check for a tie:
 	function tieChecker() {
-		if (xCounter == 5 && oCounter ==4){
+		if (xCounter == 5 && oCounter ==4 && clickCounter ==0){
 			alert("It's a tie! Play again.");
 			emptyGrid();
 		}
@@ -110,7 +110,8 @@ $(document).ready(function() {
   			clickCounter = 0;
   			$(oneTurn).css('visibility', 'visible');
 			$(twoTurn).css('visibility', 'hidden');
-			$(box).removeClass('.claimed-box');
+			$('.box').removeClass('.claimed-box-x');
+			$('.box').removeClass('.claimed-box-o');
 			$('.winner').css('visibility', 'hidden');
   		})
  })

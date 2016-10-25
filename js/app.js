@@ -60,16 +60,6 @@ $(document).ready(function() {
 		}
 	})
 
-	/*function winnerCheck() {	
-		if ($('#box1').val() === $('#box2').val() && $('#box2').val() === $('#box3').val() || $('#box4').val() === $('#box5').val() && $('#box5').val() === $('#box6').val() || $('#box7').val() === $('#box8').val() && $('#box8').val() === $('#box9').val()){
-			if ($('#box1').val() == 'X'){
-				console.log("Player 1 wins X's!");
-			} else if ($('#box1').val() == 'O'){
-				console.log("Player 2 wins O's!");
-			}
-		}
-	}
-	*/
 	function winnerCheck(n, player) {
 		if ($('#box1').hasClass('.claimed-box-x') && $('#box2').hasClass('.claimed-box-x') && $('#box3').hasClass('.claimed-box-x') ||
 		$('#box1').hasClass('.claimed-box-o') && $('#box2').hasClass('.claimed-box-o') && $('#box3').hasClass('.claimed-box-o') ||
